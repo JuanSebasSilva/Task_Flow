@@ -110,7 +110,7 @@ export default function Tasks() {
           />
         ))}
       </div>
-      <button style={{ marginTop: "2rem" }} onClick={logout}>
+      <button className='logout-btn' onClick={logout}>
         Cerrar sesión
       </button>
     </div>
