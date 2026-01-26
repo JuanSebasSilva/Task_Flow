@@ -5,12 +5,14 @@ import '../styles/tasks.css'
 import { signOut } from 'firebase/auth'
 import TaskForm from '../components/TaskForm'
 import Task from '../components/Task'
+import Taskfilter from '../components/Taskfilter'
 
 export default function Tasks() {
   const [tasks, setTasks] = useState([])
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [editingId, setEditingId] = useState(null)
+  const [filter, setFilter] = useState('all')
 
   const user = auth.currentUser
 
@@ -98,9 +100,15 @@ export default function Tasks() {
         createTask={createTask}
       />
 
+      <Taskfilter filter={filter} setFilter={setFilter} />
+
       <div className='task-list'>
         {tasks.length === 0 && <p>No hay tareas</p>}
-        {tasks.map(task => (
+        {tasks.filter(task => {
+          if (filter === 'completed') return task.completed
+          if (filter === 'pending') return !task.completed
+          return true
+        }).map(task => (
           <Task
             key={task.id}
             task={task}

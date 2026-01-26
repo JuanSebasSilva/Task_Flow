@@ -118,3 +118,27 @@
   background-color: #d9363e;
   /* rojo más oscuro al pasar el mouse */
 }
+
+.task-filters {
+  margin-bottom: 20px;
+}
+
+.task-filters button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-filters button.active {
+  background-color: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+
+.task-filters button:hover {
+  background-color: #e6f7ff;
+}
