@@ -7,11 +7,6 @@ import Tasks from './pages/Tasks'
 import Login from './pages/Login.jsx'
 import Signin from './pages/Signin'
 
-function PrivateRoute({ user, children }) {
-  if (!user) return <Navigate to='/login' />
-  return children
-}
-
 function App() {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
