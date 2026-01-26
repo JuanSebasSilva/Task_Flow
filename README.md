@@ -66,3 +66,38 @@ allow delete: if request.auth != null && request.auth.uid == resource.data.userI
 }
 }
 }
+
+Estas reglas garantizan:
+
+- Acceso solo a usuarios autenticados
+- Aislamiento de datos por usuario
+- Protección contra accesos no autorizados
+
+---
+
+INSTALACIÓN Y EJECUCIÓN
+
+1. Clonar el repositorio:
+   git clone https://github.com/JuanSebasSilva/Task_Flow.git
+
+2. Instalar dependencias:
+   npm install
+
+3. Variables de entorno
+   Crear un archivo .env en la raíz del proyecto:
+   VITE_FIREBASE_API_KEY=TU_API_KEY
+   VITE_FIREBASE_AUTH_DOMAIN=TU_AUTH_DOMAIN
+   VITE_FIREBASE_PROJECT_ID=TU_PROJECT_ID
+   VITE_FIREBASE_STORAGE_BUCKET=TU_STORAGE_BUCKET
+   VITE_FIREBASE_MESSAGING_SENDER_ID=TU_SENDER_ID
+   VITE_FIREBASE_APP_ID=TU_APP_ID
+
+4. Ejecutar el proyecto:
+   npm run dev
+
+---
+
+AUTOR
+
+Desarrollado por Sebastián Silva
+Tecnólogo en Análisis y Desarrollo de Software
