@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { auth, db } from '../services/firebase'
 import { addDoc, collection, deleteDoc, doc, onSnapshot, query, serverTimestamp, updateDoc, where } from 'firebase/firestore'
-import '../styles/tasks.css'
+/* import '../styles/tasks.css' */
 import { signOut } from 'firebase/auth'
 import TaskForm from '../components/TaskForm'
 import Task from '../components/Task'
@@ -88,8 +88,8 @@ export default function Tasks() {
   };
 
   return (
-    <div className='tasks-cont'>
-      <h2>TAREAS</h2>
+    <div className='max-w-3xl mx-auto my-8 p-4'>
+      <h2 className='text-center mb-6 text-gray-800 text-xl font-semibold'>TAREAS</h2>
 
       <TaskForm
         title={title}
@@ -102,7 +102,7 @@ export default function Tasks() {
 
       <Taskfilter filter={filter} setFilter={setFilter} />
 
-      <div className='task-list'>
+      <div className='flex flex-col gap-4'>
         {tasks.length === 0 && <p>No hay tareas</p>}
         {tasks.filter(task => {
           if (filter === 'completed') return task.completed
@@ -118,7 +118,7 @@ export default function Tasks() {
           />
         ))}
       </div>
-      <button className='logout-btn' onClick={logout}>
+      <button className='mt-5 px-4 py-2 bg-red-500 text-white font-bold rounded-md hover:bg-red-600 transition' onClick={logout}>
         Cerrar sesión
       </button>
     </div>

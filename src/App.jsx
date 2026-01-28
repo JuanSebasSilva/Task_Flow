@@ -3,6 +3,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { useEffect, useState } from 'react'
 import { auth } from './services/firebase'
 
+import './styles/index.css'
 import Tasks from './pages/Tasks'
 import Login from './pages/Login.jsx'
 import Signin from './pages/Signin'
